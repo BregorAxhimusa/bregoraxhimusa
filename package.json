@@ -35,7 +35,12 @@
     },
     "dependencies": {
         "@inertiajs/vue3": "^1.1.0",
+<<<<<<< Updated upstream
         "@vitejs/plugin-vue": "^5.0.4"
+=======
+        "@vitejs/plugin-vue": "^5.0.4",
+        "swiper": "^6.4.11"
+>>>>>>> Stashed changes
     }
 
 }
