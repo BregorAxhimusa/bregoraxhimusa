@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { edreaCursor } from "@/utilits";
+import { edreaCursor } from "../../utilits";
 
 export default {
   name: `CursorComponent`,

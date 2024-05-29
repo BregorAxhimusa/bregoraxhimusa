@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { navFuntions } from "@/navFuntions";
+import { navFuntions } from "../navFuntions";
 import AnimationText from "./AnimationText.vue";
 
 export default {
