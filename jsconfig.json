@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "compilerOptions": {
       "target": "es5",
       "module": "esnext",
@@ -13,7 +14,27 @@
         "dom",
         "dom.iterable",
         "scripthost"
+=======
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": [
+        "src/*"
+>>>>>>> Stashed changes
       ]
-    }
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   }
+<<<<<<< Updated upstream
   
+=======
+}
+>>>>>>> Stashed changes
