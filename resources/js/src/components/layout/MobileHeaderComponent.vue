@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { navFuntions } from "@/navFuntions";
+import { navFuntions } from "../../navFuntions";
 import Menu from "./Menu.vue";
 export default {
   name: `MobileHeaderComponent`,

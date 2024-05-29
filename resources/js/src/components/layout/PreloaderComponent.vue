@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { edreaPreLoader } from "@/utilits";
+import { edreaPreLoader } from "../../utilits";
 
 export default {
   name: `PreloaderComponent`,

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { navFuntions } from "@/navFuntions";
+import { navFuntions } from "../../navFuntions";
 export default {
   name: `Menu`,
   data() {
