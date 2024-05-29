@@ -1,20 +1,4 @@
 {
-<<<<<<< Updated upstream
-    "compilerOptions": {
-      "target": "es5",
-      "module": "esnext",
-      "baseUrl": "./",
-      "moduleResolution": "node",
-      "paths": {
-        "@/*": ["resources/js/*"],
-        "ziggy-js": ["./vendor/tightenco/ziggy"]
-      },
-      "lib": [
-        "esnext",
-        "dom",
-        "dom.iterable",
-        "scripthost"
-=======
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
@@ -23,7 +7,6 @@
     "paths": {
       "@/*": [
         "src/*"
->>>>>>> Stashed changes
       ]
     },
     "lib": [
@@ -33,8 +16,4 @@
       "scripthost"
     ]
   }
-<<<<<<< Updated upstream
-  
-=======
 }
->>>>>>> Stashed changes
