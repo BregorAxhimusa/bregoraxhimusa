@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-<<<<<<< Updated upstream
         "baseUrl": ".",
         "paths": {
             "@/*": ["resources/js/*"],
@@ -9,7 +8,6 @@
     },
     "exclude": ["node_modules", "public"]
 }
-=======
       "target": "es5",
       "module": "esnext",
       "baseUrl": "./",
@@ -18,6 +16,8 @@
         "@/*": [
           "src/*"
         ]
+        "@/*": ["resources/js/*"],
+        "ziggy-js": ["./vendor/tightenco/ziggy"]
       },
       "lib": [
         "esnext",
@@ -27,5 +27,3 @@
       ]
     }
   }
-  
->>>>>>> Stashed changes

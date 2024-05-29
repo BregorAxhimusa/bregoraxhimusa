@@ -1,10 +1,17 @@
 {
-<<<<<<< Updated upstream
+    "name": "bregor-axhimusa",
+    "version": "0.1.0",
     "private": true,
-    "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build"
+    },
+    "dependencies": {
+      "apexcharts": "^3.35.5",
+      "core-js": "^3.8.3",
+      "swiper": "^8.3.2",
+      "vue": "^3.2.13",
+      "vue-router": "^4.0.3"
     },
     "devDependencies": {
         "@inertiajs/vue3": "^1.0.0",
@@ -18,7 +25,6 @@
         "vite": "^5.0",
         "vue": "^3.4.0"
     }
-=======
   "private": true,
   "type": "module",
   "scripts": {
@@ -39,5 +45,16 @@
     "@inertiajs/vue3": "^1.1.0",
     "@vitejs/plugin-vue": "^5.0.4"
   }
->>>>>>> Stashed changes
 }
+=======
+      "@vue/cli-plugin-babel": "~5.0.0",
+      "@vue/cli-plugin-router": "~5.0.0",
+      "@vue/cli-service": "~5.0.0"
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead",
+      "not ie 11"
+    ]
+  }
