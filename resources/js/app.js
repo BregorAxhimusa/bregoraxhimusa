@@ -1,6 +1,14 @@
 import './bootstrap';
 import '../css/app.css';
 
+import '../../public/css/plugins.css';
+import '../../public/css/style.css';
+import '../../public/css/font/fontello.eot';
+import '../../public/css/font/fontello.svg';
+import '../../public/css/font/fontello.ttf';
+import '../../public/css/font/fontello.woff';
+import '../../public/css/font/fontello.woff2';
+
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
