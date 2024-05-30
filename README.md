@@ -147,8 +147,8 @@ The stock market is always changing due to various factors. The total money a co
 
 ## Links
 
-[Personal Portfolio](link_to_portfolio)  
-[LinkedIn](link_to_linkedin)  
-[GitHub](link_to_github)
+[Personal Portfolio](https://bregoraxhimusa.com/)
+[LinkedIn](https://www.linkedin.com/in/bregoraxhimusa/)
+[GitHub](https://github.com/BregorAxhimusa/)
 
 ---
