@@ -2,7 +2,7 @@
   <div class="edrea_tm_section animated" id="home">
     <div class="section_inner">
       <div class="edrea_tm_home">
-        <h3 class="name">David <span class="coloring">Parker</span></h3>
+        <h3 class="name">Bregor <span class="coloring">Axhimusa</span></h3>
         <h3 class="job">
           <AnimationText />
         </h3>
