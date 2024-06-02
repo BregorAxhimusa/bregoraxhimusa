@@ -96,8 +96,13 @@ export const waves = () => {
 
       const canvas = document.createElement("canvas");
       const gl = canvas.getContext("webgl", { antialias: options.antialias });
-
       if (!gl) return false;
+
+      gl.clearDepth(1.0);
+      gl.enable(gl.DEPTH_TEST);
+      gl.depthFunc(gl.LEQUAL);
+
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
       this.count = 0;
       this.gl = gl;
@@ -226,37 +231,43 @@ export const waves = () => {
     createShader(type, source) {
       const gl = this.gl;
       const shader = gl.createShader(type);
-
+    
       gl.shaderSource(shader, source);
       gl.compileShader(shader);
-
-      if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        return shader;
-      } else {
-        console.log(gl.getShaderInfoLog(shader));
+    
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error(`Error compiling shader: ${source}`, gl.getShaderInfoLog(shader));
         gl.deleteShader(shader);
+        return null;
       }
+      return shader;
     }
 
     createProgram(vertex, fragment) {
       const gl = this.gl;
-
+    
       const vertexShader = this.createShader(gl.VERTEX_SHADER, vertex);
       const fragmentShader = this.createShader(gl.FRAGMENT_SHADER, fragment);
-
+    
+      if (!vertexShader || !fragmentShader) {
+        console.error("Failed to create shaders");
+        return;
+      }
+    
       const program = gl.createProgram();
-
+    
       gl.attachShader(program, vertexShader);
       gl.attachShader(program, fragmentShader);
       gl.linkProgram(program);
-
-      if (gl.getProgramParameter(program, gl.LINK_STATUS)) {
-        gl.useProgram(program);
-        this.program = program;
-      } else {
-        console.log(gl.getProgramInfoLog(program));
+    
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error("Error linking program", gl.getProgramInfoLog(program));
         gl.deleteProgram(program);
+        return;
       }
+    
+      gl.useProgram(program);
+      this.program = program;
     }
 
     createUniforms(data) {
@@ -346,24 +357,28 @@ export const waves = () => {
       const gl = this.gl;
       const buffers = (this.data.buffers = data);
       const values = (this.buffers = {});
-
+    
       Object.keys(buffers).forEach((name) => {
         const buffer = buffers[name];
-
         buffer.buffer = this.createBuffer("a_" + name, buffer.size);
-
+    
         Object.defineProperty(values, name, {
           set: (data) => {
+            if (!data) {
+              console.warn(`No data provided for buffer: ${name}`);
+              return;
+            }
             buffers[name].data = data;
             this.setBuffer(name, data);
-
-            if (name == "position")
+            if (name === "position") {
               this.count = buffers.position.data.length / 3;
+            }
           },
           get: () => buffers[name].data,
         });
       });
     }
+    
 
     createBuffer(name, size) {
       const gl = this.gl;
@@ -401,7 +416,7 @@ export const waves = () => {
     createTexture(src) {
       const gl = this.gl;
       const texture = gl.createTexture();
-
+    
       gl.bindTexture(gl.TEXTURE_2D, texture);
       gl.texImage2D(
         gl.TEXTURE_2D,
@@ -414,24 +429,24 @@ export const waves = () => {
         gl.UNSIGNED_BYTE,
         new Uint8Array([0, 0, 0, 0])
       );
-
+    
       this.texture = texture;
-
+    
       if (src) {
         this.uniforms.hasTexture = 1;
         this.loadTexture(src);
       }
     }
-
+    
     loadTexture(src) {
       const gl = this.gl;
       const texture = this.texture;
-
+    
       const textureImage = new Image();
-
+    
       textureImage.onload = () => {
         gl.bindTexture(gl.TEXTURE_2D, texture);
-
+    
         gl.texImage2D(
           gl.TEXTURE_2D,
           0,
@@ -440,36 +455,42 @@ export const waves = () => {
           gl.UNSIGNED_BYTE,
           textureImage
         );
-
+    
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-
+    
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
       };
-
+    
       textureImage.src = src;
+    
+      textureImage.onerror = (err) => {
+        console.error(`Failed to load texture: ${src}`, err);
+      };
     }
+    
 
     update() {
       const gl = this.gl;
-
+    
       const now = performance.now();
       const elapsed = (now - this.time.start) / 5000;
       const delta = now - this.time.old;
       this.time.old = now;
-
+    
       this.uniforms.time = elapsed;
-
+    
       if (this.count > 0) {
-        gl.clear(gl.COLORBUFFERBIT);
+        gl.clear(gl.COLOR_BUFFER_BIT); // Fixed typo: gl.COLORBUFFERBIT -> gl.COLOR_BUFFER_BIT
         gl.drawArrays(gl.POINTS, 0, this.count);
       }
-
+    
       this.onUpdate(delta);
-
+    
       requestAnimationFrame(this.update);
     }
+    
   }
 
   const pointSize = 2.5;

@@ -1,22 +1,10 @@
-// import '../css/bootstrap.css';
-// import '../css/app.css';
-
 import '../../public/css/plugins.css';
 import '../../public/css/style.css';
-
-
-
 // import '../../public/css/font/fontello.eot';
 // import '../../public/css/font/fontello.svg';
 // import '../../public/css/font/fontello.ttf';
 // import '../../public/css/font/fontello.woff';
 // import '../../public/css/font/fontello.woff2';
-
-// import '../css/js/app.3d22f681.js';
-// import '../css/js/app.3d22f681.js.map';
-// import '../css/js/chunk-vendors.e3733d6e.js';
-// import '../css/js/chunk-vendors.e3733d6e.js.map';
-
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
