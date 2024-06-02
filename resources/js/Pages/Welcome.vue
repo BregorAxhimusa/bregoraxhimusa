@@ -140,7 +140,7 @@ function handleImageError() {
   import { waves } from "../src/waves";
   
   export default {
-    name: `HomeView`,
+    name: `Welcome`,
     mounted() {
       waves();
       imgToSVG();
