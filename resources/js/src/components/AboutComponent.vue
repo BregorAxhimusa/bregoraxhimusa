@@ -10,14 +10,14 @@
         </div>
         <div class="right">
           <div class="short">
-            <h3 class="name">David <span class="coloring">Parker</span></h3>
+            <h3 class="name">Bregor <span class="coloring">Axhimusa</span></h3>
             <h3 class="job">
               <AnimationText />
             </h3>
           </div>
           <div class="text">
             <p>
-              My name is <span>David Parker.</span> I am a graphic designer, and
+              My name is <span>Bregor Axhimusa.</span> I am a graphic designer, and
               I'm very passionate and dedicated to my work. With 20 years
               experience as a professional a graphic designer, I have acquired
               the skills and knowledge.

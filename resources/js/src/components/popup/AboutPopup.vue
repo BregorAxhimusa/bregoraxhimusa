@@ -86,7 +86,7 @@
                 <div class="text">
                   <p>
                     Hello everybody! My name is
-                    <span>David Parker.</span> I am a graphic designer, and I'm
+                    <span>Bregor Axhimusa.</span> I am a graphic designer, and I'm
                     very passionate and dedicated to my work. With 20 years
                     experience as a professional a graphic designer, I have
                     acquired the skills and knowledge.
@@ -346,12 +346,12 @@ export default {
       open: false,
       // data
       aboutData: {
-        firstName: "David",
-        lastName: "Parker",
-        bithday: "01.07.1990",
-        address: "Avon str. 22, NYC, USA",
-        phn: "+77 022 155 02 02",
-        email: "example@gmail.com",
+        firstName: "Bregor",
+        lastName: "Axhimusa",
+        // bithday: "01.07.1990",
+        address: "Prishtina, Kosovo",
+        phn: "+383 44 904 465",
+        email: "info@bregoraxhimusa.com",
         serviceLists: [
           "Website Development",
           "Digital Experience",
@@ -367,8 +367,8 @@ export default {
           ],
           language: [
             { name: "English", value: "95" },
-            { name: "Russian", value: "80" },
-            { name: "Arabic", value: "90" },
+            // { name: "Russian", value: "80" },
+            // { name: "Arabic", value: "90" },
           ],
         },
         education: [
