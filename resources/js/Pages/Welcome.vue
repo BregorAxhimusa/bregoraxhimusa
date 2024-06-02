@@ -164,6 +164,3 @@ function handleImageError() {
     },
   };
   </script>
-  
-  <!-- about chart -->
-  
