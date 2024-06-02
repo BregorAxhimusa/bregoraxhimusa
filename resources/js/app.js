@@ -1,20 +1,20 @@
 import './bootstrap';
-import '../css/app.css';
+// import '../css/app.css';
 
-import '../../public/css/plugins.css';
-import '../../public/css/style.css';
+import '../css/plugins.css';
+import '../css/style.css';
 
-import '../../public/css/app.9458079f.css';
-import '../../public/css/font/fontello.eot';
-import '../../public/css/font/fontello.svg';
-import '../../public/css/font/fontello.ttf';
-import '../../public/css/font/fontello.woff';
-import '../../public/css/font/fontello.woff2';
+import '../css/app.9458079f.css';
+import '../css/font/fontello.eot';
+import '../css/font/fontello.svg';
+import '../css/font/fontello.ttf';
+import '../css/font/fontello.woff';
+import '../css/font/fontello.woff2';
 
-// import '../../public/css/js/app.3d22f681.js';
-// import '../../public/css/js/app.3d22f681.js.map';
-// import '../../public/css/js/chunk-vendors.e3733d6e.js';
-// import '../../public/css/js/chunk-vendors.e3733d6e.js.map';
+// import '../css/js/app.3d22f681.js';
+// import '../css/js/app.3d22f681.js.map';
+// import '../css/js/chunk-vendors.e3733d6e.js';
+// import '../css/js/chunk-vendors.e3733d6e.js.map';
 
 
 import { createApp, h } from 'vue';
