@@ -348,10 +348,10 @@ export default {
       aboutData: {
         firstName: "Bregor",
         lastName: "Axhimusa",
-        // bithday: "01.07.1990",
+        bithday: "13 August",
         address: "Prishtina, Kosovo",
         phn: "+383 44 904 465",
-        email: "info@bregoraxhimusa.com",
+        email: "bregoraxhimusa.com",
         serviceLists: [
           "Website Development",
           "Digital Experience",
