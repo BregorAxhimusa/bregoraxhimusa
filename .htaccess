@@ -2,6 +2,7 @@
     RewriteEngine On
     RewriteRule ^build/(.*)$ public/build/$1 [L]
     RewriteRule ^img/(.*)$ public/img/$1 [L]
+    RewriteRule ^css/(.*)$ public/css/$1 [L]
     RewriteRule ^(.*)/$ /public/$1 [L,R=301]
     RewriteRule ^ public/index.php [L]
 </IfModule>
